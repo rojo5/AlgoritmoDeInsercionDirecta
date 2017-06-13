@@ -12,7 +12,7 @@ package algoritmoinserciondirecta;
  * @author rojo5
  */
 public class AlgoritmoInsercionDirecta {
-static int[] numeros= {10,7,21,32,4};
+static int[] numeros= {10,7,21,32,4,8};
     /**
      * @param args the command line arguments
      */
@@ -24,18 +24,15 @@ static int[] numeros= {10,7,21,32,4};
     }
     
     public static void ordenaNumeros(int [] numeros){
-        int mayor;
-        int menor;
-        for(int i = 0; i<numeros.length;i++){
-            for(int u=0; u<numeros.length;u++){
-                if(numeros[i]<numeros[u]){
-                    mayor= numeros[u];
-                    menor= numeros[i];
-                    numeros[i] = mayor;
-                    numeros[u]=menor;
-                }
-            }
-        }
+        for (int i = 1; i < numeros.length; i++) {
+			int aux = numeros[i];
+			int j = i;
+			while (j > 0 && numeros[j - 1] > aux) {
+				numeros[j] = numeros[j - 1];
+				j--;
+			}
+			numeros[j] = aux;
+		}
     }
    
 }
